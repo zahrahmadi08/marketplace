@@ -1,0 +1,18 @@
+# Build output
+target/
+*.class
+
+# H2 database + uploads
+data/
+uploads/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# OS
+.DS_Store
