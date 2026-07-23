@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.ap.marketplace.client.controller.RegisterController">
+    <VBox alignment="CENTER" spacing="12" styleClass="auth-box">
+        <padding><Insets top="30" right="60" bottom="30" left="60"/></padding>
+        <Label text="ثبت‌نام" styleClass="title"/>
+        <TextField fx:id="usernameField" promptText="نام کاربری" maxWidth="280"/>
+        <TextField fx:id="fullNameField" promptText="نام و نام خانوادگی" maxWidth="280"/>
+        <TextField fx:id="phoneField" promptText="موبایل (09xxxxxxxxx)" maxWidth="280"/>
+        <TextField fx:id="emailField" promptText="ایمیل (اختیاری)" maxWidth="280"/>
+        <PasswordField fx:id="passwordField" promptText="رمز عبور (حداقل ۶ نویسه)" maxWidth="280"/>
+        <Button text="ایجاد حساب" onAction="#onRegister" defaultButton="true"
+                styleClass="primary" maxWidth="280" prefWidth="280"/>
+        <Hyperlink text="حساب دارید؟ ورود" onAction="#onGoLogin"/>
+    </VBox>
+</StackPane>

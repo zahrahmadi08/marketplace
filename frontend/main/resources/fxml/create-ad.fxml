@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.ap.marketplace.client.controller.CreateAdController">
+    <top>
+        <HBox styleClass="toolbar" alignment="CENTER_LEFT" spacing="8">
+            <Button text="بازگشت" onAction="#onBack"/>
+            <Label text="ثبت آگهی جدید" styleClass="subtitle"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true">
+            <VBox spacing="10" maxWidth="620">
+                <padding><Insets top="16" right="20" bottom="16" left="20"/></padding>
+
+                <Label text="نوع آگهی"/>
+                <ComboBox fx:id="typeCombo" maxWidth="Infinity"/>
+
+                <Label text="عنوان"/>
+                <TextField fx:id="titleField"/>
+
+                <Label text="توضیحات"/>
+                <TextArea fx:id="descriptionArea" prefRowCount="4" wrapText="true"/>
+
+                <HBox spacing="10">
+                    <VBox spacing="4" HBox.hgrow="ALWAYS">
+                        <Label text="قیمت (تومان)"/>
+                        <TextField fx:id="priceField" maxWidth="Infinity"/>
+                    </VBox>
+                    <VBox spacing="4" HBox.hgrow="ALWAYS">
+                        <Label text="دسته‌بندی"/>
+                        <ComboBox fx:id="categoryCombo" maxWidth="Infinity"/>
+                    </VBox>
+                    <VBox spacing="4" HBox.hgrow="ALWAYS">
+                        <Label text="شهر"/>
+                        <ComboBox fx:id="cityCombo" maxWidth="Infinity"/>
+                    </VBox>
+                </HBox>
+
+                <Label text="آدرس تصاویر (هر خط یک URL)"/>
+                <TextArea fx:id="imagesArea" prefRowCount="2"
+                          promptText="https://...  (اختیاری)"/>
+
+                <!-- فیلدهای خودرو -->
+                <VBox fx:id="vehicleBox" spacing="8" styleClass="card">
+                    <Label text="مشخصات خودرو" styleClass="subtitle"/>
+                    <HBox spacing="10">
+                        <TextField fx:id="brandField" promptText="برند" HBox.hgrow="ALWAYS"/>
+                        <TextField fx:id="modelField" promptText="مدل" HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                    <HBox spacing="10">
+                        <TextField fx:id="yearField" promptText="سال تولید" HBox.hgrow="ALWAYS"/>
+                        <TextField fx:id="mileageField" promptText="کارکرد (km)" HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                </VBox>
+
+                <!-- فیلدهای ملک -->
+                <VBox fx:id="propertyBox" spacing="8" styleClass="card">
+                    <Label text="مشخصات ملک" styleClass="subtitle"/>
+                    <HBox spacing="10">
+                        <TextField fx:id="areaField" promptText="متراژ" HBox.hgrow="ALWAYS"/>
+                        <TextField fx:id="roomsField" promptText="تعداد خواب" HBox.hgrow="ALWAYS"/>
+                    </HBox>
+                    <TextField fx:id="addressField" promptText="آدرس"/>
+                    <CheckBox fx:id="forRentCheck" text="اجاره‌ای است"/>
+                </VBox>
+
+                <!-- فیلد عمومی -->
+                <VBox fx:id="generalBox" spacing="8" styleClass="card">
+                    <Label text="مشخصات کالا" styleClass="subtitle"/>
+                    <TextField fx:id="conditionField" promptText="وضعیت (نو/کارکرده)"/>
+                </VBox>
+
+                <Button text="ثبت آگهی" onAction="#onSubmit" styleClass="primary"
+                        maxWidth="Infinity"/>
+                <Label text="آگهی پس از تأیید ادمین در لیست عمومی نمایش داده می‌شود."
+                       style="-fx-text-fill:#7f8c8d;"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

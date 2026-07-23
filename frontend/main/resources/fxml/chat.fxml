@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.ap.marketplace.client.controller.ChatController">
+    <top>
+        <HBox styleClass="toolbar" alignment="CENTER_LEFT" spacing="8">
+            <Button text="بازگشت" onAction="#onBack"/>
+            <Label text="گفت‌وگوها" styleClass="subtitle"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button text="بروزرسانی" onAction="#onRefresh"/>
+        </HBox>
+    </top>
+    <center>
+        <SplitPane dividerPositions="0.32">
+            <ListView fx:id="convList"/>
+            <BorderPane>
+                <center>
+                    <ListView fx:id="messageList">
+                        <BorderPane.margin><Insets top="8" right="8" bottom="8" left="8"/></BorderPane.margin>
+                    </ListView>
+                </center>
+                <bottom>
+                    <HBox spacing="8" alignment="CENTER_LEFT">
+                        <padding><Insets top="8" right="8" bottom="10" left="8"/></padding>
+                        <TextField fx:id="messageField" promptText="پیام..." HBox.hgrow="ALWAYS"/>
+                        <Button text="ارسال" onAction="#onSend" styleClass="primary" defaultButton="true"/>
+                    </HBox>
+                </bottom>
+            </BorderPane>
+        </SplitPane>
+    </center>
+</BorderPane>
