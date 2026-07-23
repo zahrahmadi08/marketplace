@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.ap.marketplace.client.controller.LoginController">
+    <VBox alignment="CENTER" spacing="14" styleClass="auth-box">
+        <padding><Insets top="40" right="60" bottom="40" left="60"/></padding>
+        <Label text="ورود به سامانه" styleClass="title"/>
+        <TextField fx:id="usernameField" promptText="نام کاربری" maxWidth="260"/>
+        <PasswordField fx:id="passwordField" promptText="رمز عبور" maxWidth="260"/>
+        <Button text="ورود" onAction="#onLogin" defaultButton="true"
+                styleClass="primary" maxWidth="260" prefWidth="260"/>
+        <Hyperlink text="حساب ندارید؟ ثبت‌نام کنید" onAction="#onGoRegister"/>
+        <Label text="تست: admin / admin123  —  ali / test123" style="-fx-text-fill:#7f8c8d;"/>
+    </VBox>
+</StackPane>
